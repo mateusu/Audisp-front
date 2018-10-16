@@ -1,6 +1,9 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Início</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -11,4 +14,5 @@
   <div *ngFor="let aud of audiencias">
     <page-audiencia-bloco [nome]="aud.nome" [data]="aud.data" [pauta]="aud.pauta"></page-audiencia-bloco>
   </div>
+  <button ion-button secondary menuToggle>Toggle Menu</button>
 </ion-content>
