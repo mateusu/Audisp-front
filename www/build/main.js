@@ -198,7 +198,7 @@ var AudienciasPage = /** @class */ (function () {
     }
     AudienciasPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-audiencias',template:/*ion-inline-start:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/audiencias/audiencias.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Audiências\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-list>\n        <ion-item *ngFor="let aud of audiencias">\n          <h3><ion-icon name="calendar"></ion-icon> {{aud.data}}</h3>\n          <p>{{aud.pauta}}</p>\n        </ion-item>\n      </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/audiencias/audiencias.html"*/
+            selector: 'page-audiencias',template:/*ion-inline-start:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/audiencias/audiencias.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title>Audiências</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n<ion-content padding>\n    <ion-list>\n        <ion-item *ngFor="let aud of audiencias">\n          <h3><ion-icon name="calendar"></ion-icon> {{aud.data}}</h3>\n          <p>{{aud.pauta}}</p>\n        </ion-item>\n      </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/audiencias/audiencias.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
     ], AudienciasPage);
@@ -233,7 +233,7 @@ var CalendarioPage = /** @class */ (function () {
     }
     CalendarioPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-calendario',template:/*ion-inline-start:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/calendario/calendario.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Calendário\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <p>CALENDARIO AQUI</p>\n</ion-content>\n'/*ion-inline-end:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/calendario/calendario.html"*/
+            selector: 'page-calendario',template:/*ion-inline-start:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/calendario/calendario.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title>Calendário</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n\n<ion-content padding>\n    <p>CALENDARIO AQUI</p>\n</ion-content>\n'/*ion-inline-end:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/calendario/calendario.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
     ], CalendarioPage);
