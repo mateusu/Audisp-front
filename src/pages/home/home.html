@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Início</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-searchbar placeholder="Buscar Audiência Pública" [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel"
+    (ionInput)="onInput($event.target.value)" (ionCancel)="onCancel($event)">
+  </ion-searchbar>
+  <div *ngFor="let aud of audiencias">
+    <page-audiencia-bloco [nome]="aud.nome" [data]="aud.data" [pauta]="aud.pauta"></page-audiencia-bloco>
+  </div>
+</ion-content>
