@@ -1,0 +1,21 @@
+
+<ion-header>
+
+  <ion-navbar>
+      <ion-icon class="backButton" name="md-arrow-round-back"></ion-icon> 
+    <ion-title class="header">Configurações</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <h6>Receber notificaçõe sobre:</h6>
+        <ion-item *ngFor="let p of likesList" (click)="loga(p.id)">
+            <ion-label>{{p.nome}}</ion-label>
+            <ion-toggle [(ngModel)]="p.id"></ion-toggle>
+        </ion-item>
+        
+      </ion-list>
+</ion-content>

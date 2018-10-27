@@ -25683,3 +25683,13 @@ ion-navbar.toolbar {
   position: absolute;
   left: 0;
 }
+
+page-config .backButton {
+  position: absolute;
+  margin: 0 0 0 -1vw;
+  font-size: 4vh;
+}
+
+page-config .header {
+  padding: 0 0 0 3vw;
+}

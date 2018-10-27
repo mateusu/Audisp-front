@@ -1,6 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MenuController, IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import {IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { AudienciasPage } from '../pages/audiencias/audiencias';
@@ -8,6 +8,7 @@ import { CalendarioPage } from '../pages/calendario/calendario';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import {AudienciaBlocoPage} from '../pages/audiencia-bloco/audiencia-bloco';
+import {ConfigPage} from '../pages/config/config';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -19,7 +20,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CalendarioPage,
     HomePage,
     TabsPage,
-    AudienciaBlocoPage
+    AudienciaBlocoPage,
+    ConfigPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CalendarioPage,
     HomePage,
     TabsPage,
-    AudienciaBlocoPage
+    AudienciaBlocoPage, 
+    ConfigPage
   ],
   providers: [
     StatusBar,

@@ -8,11 +8,11 @@
     <ion-content>
         <ion-list>
             <ion-item>
-                <ion-label>Notificaç~ões</ion-label>
+                <ion-label>Notificações</ion-label>
                 <ion-toggle [(ngModel)]="pepperoni"></ion-toggle>
             </ion-item>
-            <button menuClose ion-item>
-                Configurações
+            <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+                {{p.title}}
             </button>
             <button menuClose ion-item>
                 Sair
