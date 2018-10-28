@@ -25675,21 +25675,11 @@ ion-navbar.toolbar {
 }
 
 .page {
-  height: 40vh;
-  margin: 0 0 -10vh 0;
+  height: 45vh;
+  margin: 0 0 -15vh 0;
 }
 
 .bloco {
   position: absolute;
   left: 0;
-}
-
-page-config .backButton {
-  position: absolute;
-  margin: 0 0 0 -1vw;
-  font-size: 4vh;
-}
-
-page-config .header {
-  padding: 0 0 0 3vw;
 }

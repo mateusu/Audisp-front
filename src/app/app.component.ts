@@ -26,10 +26,14 @@ export class MyApp {
     this.pages = [
       { title: 'Configurações', component: ConfigPage }
     ];
+
+  }
+
+  ionViewDidLoad() {
+    this.nav.setRoot(this.rootPage);
   }
 
   openPage(page) {
-   
-    this.nav.setRoot(page.component);
+    this.nav.push(page.component);
   }
 }

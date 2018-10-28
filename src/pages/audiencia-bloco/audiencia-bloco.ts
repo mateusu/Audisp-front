@@ -18,6 +18,8 @@ export class AudienciaBlocoPage {
   @Input() nome;
   @Input() data;
   @Input() pauta;
+  @Input() local;
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

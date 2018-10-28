@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
+import { BackendService } from '../../services/backend-service';
 
 /**
  * Generated class for the ConfigPage page.
@@ -17,15 +18,22 @@ import { NgForm } from '@angular/forms';
 export class ConfigPage {
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public backend: BackendService) {
+    backend.getUserLikes().subscribe((data: any) => {
+      this.likesList = data;
+    })
   }
 
   ionViewDidLoad() {
   }
 
-  loga(f: NgForm){
+  goBack() {
+    this.navCtrl.pop();
+  }
+
+  loga(f: NgForm) {
     console.log(f);
   }
-  likesList = [{nome: 'Saúde', id:'saude'},{nome: 'Educação', id: 'educacao'},{nome: 'Meio Ambiente', id: 'meioambiente'},{nome: 'Gastos Públicos', id: 'gastospublicos'}];
-
+  
+  likesList: any[];
 }
