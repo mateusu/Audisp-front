@@ -9,7 +9,7 @@
 
 <ion-content padding>
     <ion-list>
-        <h6>Receber notificações sobre:</h6>
+        <h6>Receber avisos de Audiências Públicas sobre:</h6>
         <ion-item *ngFor="let p of likesList" (click)="loga(p.id)">
             <ion-label>{{p.nome}}</ion-label>
             <ion-toggle [(ngModel)]="p.id"></ion-toggle>
