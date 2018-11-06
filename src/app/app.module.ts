@@ -12,6 +12,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import {AudienciaBlocoPage} from '../pages/audiencia-bloco/audiencia-bloco';
 import {ConfigPage} from '../pages/config/config';
+import { LoginPage } from '../pages/login/login';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -24,13 +25,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     AudienciaBlocoPage,
-    ConfigPage
+    ConfigPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
-    HttpModule
+    HttpModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -40,7 +42,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     AudienciaBlocoPage, 
-    ConfigPage
+    ConfigPage,
+    LoginPage
   ],
   providers: [
     StatusBar,

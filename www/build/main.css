@@ -25683,3 +25683,13 @@ ion-navbar.toolbar {
   position: absolute;
   left: 0;
 }
+
+page-login .buttons {
+  width: 30vw;
+  margin-left: 35%;
+}
+
+page-login .logo {
+  background: white;
+  margin-left: 20%;
+}
