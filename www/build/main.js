@@ -64,6 +64,7 @@ var ConfigPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_backend_service__ = __webpack_require__(46);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -75,29 +76,46 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
 var LoginPage = /** @class */ (function () {
-    function LoginPage(navCtrl, viewCtrl, navParams) {
+    function LoginPage(navCtrl, viewCtrl, navParams, backend, toastCtrl) {
         this.navCtrl = navCtrl;
         this.viewCtrl = viewCtrl;
         this.navParams = navParams;
+        this.backend = backend;
+        this.toastCtrl = toastCtrl;
     }
     LoginPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad LoginPage');
+        this.register = false;
     };
     LoginPage.prototype.login = function (mail, password) {
-        this.viewCtrl.dismiss({ mail: mail, password: password });
+        var _this = this;
+        this.backend.getAuthorization(mail, password).subscribe(function (data) {
+            if (data[0]) {
+                _this.viewCtrl.dismiss();
+            }
+            else {
+                var toast = _this.toastCtrl.create({
+                    message: 'Email ou senha inválidos',
+                    duration: 3000
+                });
+                toast.present();
+            }
+        });
     };
     LoginPage.prototype.cancel = function () {
         this.viewCtrl.dismiss();
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/login/login.html"*/'<!--\n  Generated template for the LoginPage page.\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <ion-img class="logo" width="200px" height="200px" src="../../assets/imgs/logo.png" ion-img></ion-img>\n  <ion-row>\n    <ion-col>\n      <ion-list inset>\n        <ion-item>\n          <ion-input placeholder="Email" type="text" #mail></ion-input>\n        </ion-item>\n        <ion-item>\n          <ion-input placeholder="Senha" type="password" #password></ion-input>\n        </ion-item>\n      </ion-list>\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col>\n      <button ion-button class="buttons submit-btn" (click)="login(mail.value,password.value)" type="submit">Login\n      </button>\n      <button ion-button color="danger" class="buttons" (click)="cancel()" type="submit">Cancelar\n        </button>\n    </ion-col>\n  </ion-row>\n</ion-content>'/*ion-inline-end:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/login/login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/login/login.html"*/'<!--\n  Generated template for the LoginPage page.\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-img *ngIf="!register" class="logo" width="200px" height="200px" src="../../assets/imgs/logo.png" ion-img></ion-img>\n  <ion-row>\n    <ion-col>\n      <ion-list inset>\n        <ion-item *ngIf="register">\n          <ion-input placeholder="Nome" type="text" #name></ion-input>\n        </ion-item>\n        <ion-item>\n          <ion-input placeholder="Email" type="text" #mail></ion-input>\n        </ion-item>\n        <ion-item>\n          <ion-input placeholder="Senha" type="password" #password></ion-input>\n        </ion-item>\n        <ion-item *ngIf="register">\n          <ion-input placeholder="Nascimento" type="date" #nascimento></ion-input>\n        </ion-item>\n      </ion-list>\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col>\n      <button *ngIf="!register" ion-button class="buttons submit-btn" (click)="login(mail.value,password.value)" type="submit">Login\n      </button>\n      <button *ngIf="!register" ion-button color="danger" class="buttons" (click)="cancel()" type="submit">Cancelar\n      </button>\n      <button *ngIf="!register" ion-button class="buttons" (click)="register=true;" clear>Registrar</button>\n\n      <button *ngIf="register" ion-button class="buttons submit-btn" (click)="login(mail.value,password.value,name.value,nascimento.value)" type="submit">Registrar\n        </button>\n      <button *ngIf="register" ion-button color="danger" class="buttons" (click)="cancel()" type="submit">Cancelar\n        </button>\n    </ion-col>\n  </ion-row>\n</ion-content>'/*ion-inline-end:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/login/login.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ViewController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_backend_service__["a" /* BackendService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_backend_service__["a" /* BackendService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */]) === "function" && _e || Object])
     ], LoginPage);
     return LoginPage;
-    var _a, _b, _c;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=login.js.map
@@ -595,11 +613,15 @@ var BackendService = /** @class */ (function () {
     BackendService.prototype.getUserLikes = function () {
         return this.http.get('http://localhost:6005/user/likes', {});
     };
+    BackendService.prototype.getAuthorization = function (email, senha) {
+        return this.http.post('http://localhost:6005/auth/validate', { email: email, senha: senha });
+    };
     BackendService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object])
     ], BackendService);
     return BackendService;
+    var _a;
 }());
 
 //# sourceMappingURL=backend-service.js.map
