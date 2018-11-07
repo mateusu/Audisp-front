@@ -1,8 +1,3 @@
-<!--
-  Generated template for the LoginPage page.
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
@@ -17,8 +12,8 @@
   <ion-row>
     <ion-col>
       <ion-list inset>
-        <ion-item *ngIf="register">
-          <ion-input placeholder="Nome" type="text" #name></ion-input>
+        <ion-item [hidden]="!register">
+          <ion-input placeholder="Nome" type="text" #nome></ion-input>
         </ion-item>
         <ion-item>
           <ion-input placeholder="Email" type="text" #mail></ion-input>
@@ -26,8 +21,8 @@
         <ion-item>
           <ion-input placeholder="Senha" type="password" #password></ion-input>
         </ion-item>
-        <ion-item *ngIf="register">
-          <ion-input placeholder="Nascimento" type="date" #nascimento></ion-input>
+        <ion-item [hidden]="!register">
+          <ion-input placeholder="Nascimento" type="date" #nasc></ion-input>
         </ion-item>
       </ion-list>
     </ion-col>
@@ -40,7 +35,7 @@
       </button>
       <button *ngIf="!register" ion-button class="buttons" (click)="register=true;" clear>Registrar</button>
 
-      <button *ngIf="register" ion-button class="buttons submit-btn" (click)="login(mail.value,password.value,name.value,nascimento.value)" type="submit">Registrar
+      <button *ngIf="register" ion-button class="buttons submit-btn" (click)="registrar(mail.value, password.value, nome.value, nasc.value)" type="submit">Registrar
         </button>
       <button *ngIf="register" ion-button color="danger" class="buttons" (click)="cancel()" type="submit">Cancelar
         </button>

@@ -24,7 +24,6 @@ export class AudienciaBlocoPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AudienciaBlocoPage');
   }
 
 }

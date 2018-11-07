@@ -23,4 +23,8 @@ export class BackendService {
         return this.http.post('http://localhost:6005/auth/validate', { email: email, senha: senha });
     }
 
+    registerUser(userData){
+        return this.http.post('http://localhost:6005/auth/register', userData);
+    }
+
 }

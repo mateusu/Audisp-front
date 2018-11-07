@@ -16,7 +16,6 @@ export class LoginPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
     this.register = false;
   }
 
@@ -24,12 +23,37 @@ export class LoginPage {
     this.backend.getAuthorization(mail, password).subscribe((data: any) => {
       if (data[0]) {
         this.viewCtrl.dismiss();
+        localStorage.setItem('logged', 'true');
+        location.reload();
+
       } else {
         const toast = this.toastCtrl.create({
           message: 'Email ou senha inválidos',
           duration: 3000
         });
         toast.present();
+      }
+    });
+  }
+
+  registrar(mail, pass, nome, nasc) {
+    const user = {
+      email: mail,
+      senha: pass,
+      nome: nome,
+      nascimento: nasc
+    }
+
+    this.backend.registerUser(user).subscribe((data: { status: string, text: string }) => {
+      if (data.status === 'nok') {
+        const toast = this.toastCtrl.create({
+          message: data.text,
+          duration: 3000
+        });
+        toast.present();
+      } else if (data.status === 'ok') {
+        this.login(mail, pass);
+        this.viewCtrl.dismiss();
       }
     });
   }

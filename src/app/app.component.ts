@@ -30,6 +30,13 @@ export class MyApp {
       { title: 'Configurações', component: ConfigPage }
     ];
 
+    let status = localStorage.getItem('logged');
+
+    if (status == 'true') {
+      this.userLogged = true;
+    } else {
+      this.userLogged = false;
+    }
   }
 
   ionViewDidLoad() {
@@ -45,14 +52,14 @@ export class MyApp {
       console.log(data);
     });
 
-    localStorage.setItem('logged', 'true');
-    this.userLogged = true;
-  }
-  logout() {
-    localStorage.setItem('logged', 'false');
-    this.userLogged = false;
 
   }
+  logout() {
+    localStorage.setItem('logged', 'none');
+    location.reload();
+
+  }
+  
   openPage(page) {
     this.nav.push(page.component);
   }

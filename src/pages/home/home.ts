@@ -13,6 +13,7 @@ export class HomePage {
       this.audiencias = data;
     });
   }
+  
   onInput(event) {
     console.log(event);
   }
