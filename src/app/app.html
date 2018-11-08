@@ -11,9 +11,11 @@
                 <ion-label>Notificações</ion-label>
                 <ion-toggle [(ngModel)]="pepperoni"></ion-toggle>
             </ion-item>
-            <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-                {{p.title}}
-            </button>
+            <div *ngIf="userLogged">
+                <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+                    {{p.title}}
+                </button>
+            </div>
             <button (click)="logout()" *ngIf="userLogged" menuClose ion-item>
                 Sair
             </button>

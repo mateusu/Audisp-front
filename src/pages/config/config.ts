@@ -19,17 +19,23 @@ export class ConfigPage {
 
   likesList: any[] = [];
   userId: number;
+  logged: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public backend: BackendService, public toastCtrl: ToastController) {
     this.userId = parseInt(localStorage.getItem('user'));
-    backend.getUserLikes({userId: this.userId}).subscribe((data: any[]) => {
-      this.likesList = data;
-    });
-   
-    this.likesList.map(row => {
-      row.nome = row.nome.charAt(0).toUpperCase() + row.nome.slice(1);
-      row.score = row.score;
-    });
+    if (this.userId.toString() !== 'none') {
+      this.logged = true;
+      backend.getUserLikes({ userId: this.userId }).subscribe((data: any[]) => {
+        this.likesList = data;
+      });
+
+      this.likesList.map(row => {
+        row.nome = row.nome.charAt(0).toUpperCase() + row.nome.slice(1);
+        row.score = row.score;
+      });
+    }else{
+      this.logged = false;
+    }
   }
 
   ionViewDidLoad() {
@@ -52,6 +58,7 @@ export class ConfigPage {
     this.backend.updateUserLikes(body).subscribe((data: any) => {
       if (data.status === 'ok') {
         this.showToast(data.text);
+        console.log(this.likesList);
       } else {
         this.showToast('Algo deu errado :(');
       }

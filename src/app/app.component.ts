@@ -32,7 +32,7 @@ export class MyApp {
 
     let status = localStorage.getItem('logged');
 
-    if (status == 'true') {
+    if (status !== 'none') {
       this.userLogged = true;
     } else {
       this.userLogged = false;
