@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { NgForm } from '@angular/forms';
 import { BackendService } from '../../services/backend-service';
+import { ToastController } from 'ionic-angular';
 
 /**
  * Generated class for the ConfigPage page.
@@ -17,11 +17,19 @@ import { BackendService } from '../../services/backend-service';
 })
 export class ConfigPage {
 
+  likesList: any[] = [];
+  userId: number;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public backend: BackendService) {
-    backend.getUserLikes().subscribe((data: any) => {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public backend: BackendService, public toastCtrl: ToastController) {
+    this.userId = parseInt(localStorage.getItem('user'));
+    backend.getUserLikes({userId: this.userId}).subscribe((data: any[]) => {
       this.likesList = data;
-    })
+    });
+   
+    this.likesList.map(row => {
+      row.nome = row.nome.charAt(0).toUpperCase() + row.nome.slice(1);
+      row.score = row.score;
+    });
   }
 
   ionViewDidLoad() {
@@ -30,10 +38,31 @@ export class ConfigPage {
   goBack() {
     this.navCtrl.pop();
   }
-
-  loga(f: NgForm) {
-    console.log(f);
+  salvar() {
+    let body = { userId: 0, pautas: [] };
+    body.userId = this.userId;
+    this.likesList.map(
+      (pauta) => {
+        body.pautas.push({
+          id: pauta.id,
+          score: pauta.score
+        });
+      }
+    );
+    this.backend.updateUserLikes(body).subscribe((data: any) => {
+      if (data.status === 'ok') {
+        this.showToast(data.text);
+      } else {
+        this.showToast('Algo deu errado :(');
+      }
+    });
   }
-  
-  likesList: any[];
+
+  showToast(text) {
+    const toast = this.toastCtrl.create({
+      message: text,
+      duration: 3000
+    });
+    toast.present();
+  }
 }

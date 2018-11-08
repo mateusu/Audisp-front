@@ -15,8 +15,12 @@ export class BackendService {
         return this.http.get('http://localhost:6005/aud/sugeridas', {});
     }
 
-    getUserLikes() {
-        return this.http.get('http://localhost:6005/user/likes', {});
+    getUserLikes(body) {
+        return this.http.post('http://localhost:6005/user/likes', body);
+    }
+
+    updateUserLikes(body){
+        return this.http.put('http://localhost:6005/user/updateLikes', body);
     }
 
     getAuthorization(email, senha) {

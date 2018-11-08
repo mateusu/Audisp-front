@@ -20,10 +20,11 @@ export class LoginPage {
   }
 
   login(mail, password) {
-    this.backend.getAuthorization(mail, password).subscribe((data: any) => {
-      if (data[0]) {
+    this.backend.getAuthorization(mail, password).subscribe((data: { status: string, user: string }) => {
+      if (data.status === 'ok') {
         this.viewCtrl.dismiss();
         localStorage.setItem('logged', 'true');
+        localStorage.setItem('user', data.user);
         location.reload();
 
       } else {

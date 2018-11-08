@@ -25684,6 +25684,14 @@ ion-navbar.toolbar {
   left: 0;
 }
 
+page-config .sliderLabel {
+  margin-bottom: -1vh;
+}
+
+page-config .saveBtn {
+  left: 35%;
+}
+
 page-login .buttons {
   width: 30vw;
   margin-left: 35%;

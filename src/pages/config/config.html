@@ -1,7 +1,6 @@
-
 <ion-header>
-  <ion-navbar> 
-      <ion-title>Configurações</ion-title>
+    <ion-navbar>
+        <ion-title>Configurações</ion-title>
     </ion-navbar>
 
 </ion-header>
@@ -9,11 +8,15 @@
 
 <ion-content padding>
     <ion-list>
-        <h6>Receber avisos de Audiências Públicas sobre:</h6>
-        <ion-item *ngFor="let p of likesList" (click)="loga(p.id)">
-            <ion-label>{{p.nome}}</ion-label>
-            <ion-toggle [(ngModel)]="p.id"></ion-toggle>
+        <h6>Defina seu nível de interesse nas pautas:</h6>
+        <ion-item *ngFor="let l of likesList">
+            <ion-label class="sliderLabel">{{l.nome}}</ion-label>
+            <ion-range min="0" max="100" pin="true" [(ngModel)]="l.score">
+                <ion-icon range-left name="md-thumbs-down"></ion-icon>
+                <ion-icon range-right name="md-thumbs-up"></ion-icon>
+            </ion-range>
         </ion-item>
-        
-      </ion-list>
+    </ion-list>
+    <button (click)="salvar()" ion-button class="saveBtn submit-btn">Salvar</button>
+
 </ion-content>

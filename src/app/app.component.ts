@@ -56,6 +56,7 @@ export class MyApp {
   }
   logout() {
     localStorage.setItem('logged', 'none');
+    localStorage.setItem('user', 'none');
     location.reload();
 
   }
