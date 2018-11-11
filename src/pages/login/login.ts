@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, ToastController } from 'ionic-angular';
 import { BackendService } from '../../services/backend-service';
-import { ToastController } from 'ionic-angular';
 
 @IonicPage()
 @Component({

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { BackendService } from '../../services/backend-service';
-import { ToastController } from 'ionic-angular';
 
 /**
  * Generated class for the ConfigPage page.

@@ -4,31 +4,36 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class BackendService {
 
+    url: string = "http://localhost:6005/"
     constructor(private http: HttpClient) {
     }
 
     getListaAudiencas() {
-        return this.http.get('http://localhost:6005/aud/lista', {});
+        return this.http.get(this.url + 'aud/lista', {});
     }
 
     getAudienciasSugeridas() {
-        return this.http.get('http://localhost:6005/aud/sugeridas', {});
+        return this.http.get(this.url + 'aud/sugeridas', {});
     }
 
     getUserLikes(body) {
-        return this.http.post('http://localhost:6005/user/likes', body);
+        return this.http.post(this.url + 'user/likes', body);
     }
 
-    updateUserLikes(body){
-        return this.http.put('http://localhost:6005/user/updateLikes', body);
+    updateUserLikes(body) {
+        return this.http.put(this.url + 'user/updateLikes', body);
     }
 
     getAuthorization(email, senha) {
-        return this.http.post('http://localhost:6005/auth/validate', { email: email, senha: senha });
+        return this.http.post(this.url + 'auth/validate', { email: email, senha: senha });
     }
 
-    registerUser(userData){
-        return this.http.post('http://localhost:6005/auth/register', userData);
+    registerUser(userData) {
+        return this.http.post(this.url + 'auth/register', userData);
+    }
+
+    likeAudiencia(body) {
+        return this.http.put(this.url + 'user/likeAud', body);
     }
 
 }

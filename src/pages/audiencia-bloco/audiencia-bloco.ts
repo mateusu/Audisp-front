@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { BackendService } from '../../services/backend-service';
 
 /**
  * Generated class for the AudienciaBlocoPage page.
@@ -19,11 +20,27 @@ export class AudienciaBlocoPage {
   @Input() data;
   @Input() pauta;
   @Input() local;
-  
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  @Input() pautaId;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private backend: BackendService, private toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
   }
 
+  likeAudiencia() {
+    let userId = localStorage.getItem('user');
+    if (userId !== 'none') {
+      let body = { userId: userId, pautaId: this.pautaId };
+      this.backend.likeAudiencia(body).subscribe((data) => {
+        console.log(data);
+      });
+    }else{
+      const toast = this.toastCtrl.create({
+        message: 'Para curtir, é necessário logar',
+        duration: 3000
+      });
+      toast.present();
+    }
+  }
 }

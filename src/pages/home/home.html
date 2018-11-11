@@ -12,6 +12,6 @@
     (ionInput)="onInput($event.target.value)" (ionCancel)="onCancel($event)">
   </ion-searchbar>
   <div *ngFor="let aud of audiencias">
-    <page-audiencia-bloco [local]="aud.local" [nome]="aud.nome" [data]="aud.data" [pauta]="aud.pauta"></page-audiencia-bloco>
+    <page-audiencia-bloco [local]="aud.local" [nome]="aud.nome" [data]="aud.data" [pauta]="aud.pauta" [pautaId]="aud.pautaId"></page-audiencia-bloco>
   </div>
 </ion-content>
