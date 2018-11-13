@@ -23,6 +23,7 @@ export class AudienciaBlocoPage {
   @Input() pautaId;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private backend: BackendService, private toastCtrl: ToastController) {
+    console.log(this.pauta);
   }
 
   ionViewDidLoad() {
@@ -35,7 +36,7 @@ export class AudienciaBlocoPage {
       this.backend.likeAudiencia(body).subscribe((data) => {
         console.log(data);
       });
-    }else{
+    } else {
       const toast = this.toastCtrl.create({
         message: 'Para curtir, é necessário logar',
         duration: 3000

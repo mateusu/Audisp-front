@@ -17,6 +17,7 @@ import { LoginPage } from '../pages/login/login';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LocalNotifications } from '@ionic-native/local-notifications';
+import { Calendar } from '@ionic-native/calendar';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     SplashScreen,
     BackendService,
     LocalNotifications,
+    Calendar,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

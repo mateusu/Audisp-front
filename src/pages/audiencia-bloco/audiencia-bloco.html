@@ -6,13 +6,16 @@
 
       <h2>{{nome}}</h2>
       <div>
-        <p><ion-icon style="margin: 1vh 0 0 0" name="calendar"></ion-icon> {{local}} - {{data}}</p>
+        <p>
+          <ion-icon style="margin: 1vh 0 0 0" name="calendar"></ion-icon> {{local}} - {{data}}
+        </p>
       </div>
     </ion-item>
 
 
     <ion-card-content>
-      <p>{{pauta}}</p>
+      <p><span *ngFor="let p of pauta; let i = index">{{p}}<span *ngIf="i!=pauta.length -1">,
+          </span></span></p> 
     </ion-card-content>
 
     <ion-row>

@@ -9,7 +9,8 @@ import { BackendService } from '../../services/backend-service';
 export class HomePage {
 
   constructor(public navCtrl: NavController, private backend: BackendService) {
-    this.backend.getAudienciasSugeridas().subscribe((data: any) => {
+    let user = localStorage.getItem('user');
+    this.backend.getAudienciasSugeridas(user).subscribe((data: any) => {
       this.audiencias = data;
     });
   }

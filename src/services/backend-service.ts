@@ -12,8 +12,8 @@ export class BackendService {
         return this.http.get(this.url + 'aud/lista', {});
     }
 
-    getAudienciasSugeridas() {
-        return this.http.get(this.url + 'aud/sugeridas', {});
+    getAudienciasSugeridas(user) {
+        return this.http.post(this.url + 'aud/sugeridas', {id: user});
     }
 
     getUserLikes(body) {

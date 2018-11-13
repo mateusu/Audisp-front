@@ -6,8 +6,8 @@ webpackJsonp([3],{
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConfigPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_backend_service__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_backend_service__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -85,10 +85,9 @@ var ConfigPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-config',template:/*ion-inline-start:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/config/config.html"*/'<ion-header>\n    <ion-navbar>\n        <ion-title>Configurações</ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <ion-list>\n        <h6>Defina seu nível de interesse nas pautas:</h6>\n        <ion-item *ngFor="let l of likesList">\n            <ion-label class="sliderLabel">{{l.nome}}</ion-label>\n            <ion-range min="0" max="100" pin="true" [(ngModel)]="l.score">\n                <ion-icon range-left name="md-thumbs-down"></ion-icon>\n                <ion-icon range-right name="md-thumbs-up"></ion-icon>\n            </ion-range>\n        </ion-item>\n    </ion-list>\n    <button (click)="salvar()" ion-button class="saveBtn submit-btn">Salvar</button>\n\n</ion-content>'/*ion-inline-end:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/config/config.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_backend_service__["a" /* BackendService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_backend_service__["a" /* BackendService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__services_backend_service__["a" /* BackendService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */]])
     ], ConfigPage);
     return ConfigPage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=config.js.map
@@ -101,8 +100,8 @@ var ConfigPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_backend_service__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_backend_service__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -173,10 +172,9 @@ var LoginPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-login',template:/*ion-inline-start:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/login/login.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-img *ngIf="!register" class="logo" width="200px" height="200px" src="../../assets/imgs/logo.png" ion-img></ion-img>\n  <ion-row>\n    <ion-col>\n      <ion-list inset>\n        <ion-item [hidden]="!register">\n          <ion-input placeholder="Nome" type="text" #nome></ion-input>\n        </ion-item>\n        <ion-item>\n          <ion-input placeholder="Email" type="text" #mail></ion-input>\n        </ion-item>\n        <ion-item>\n          <ion-input placeholder="Senha" type="password" #password></ion-input>\n        </ion-item>\n        <ion-item [hidden]="!register">\n          <ion-input placeholder="Nascimento" type="date" #nasc></ion-input>\n        </ion-item>\n      </ion-list>\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col>\n      <button *ngIf="!register" ion-button class="buttons submit-btn" (click)="login(mail.value,password.value)" type="submit">Login\n      </button>\n      <button *ngIf="!register" ion-button color="danger" class="buttons" (click)="cancel()" type="submit">Cancelar\n      </button>\n      <button *ngIf="!register" ion-button class="buttons" (click)="register=true;" clear>Registrar</button>\n\n      <button *ngIf="register" ion-button class="buttons submit-btn" (click)="registrar(mail.value, password.value, nome.value, nasc.value)" type="submit">Registrar\n        </button>\n      <button *ngIf="register" ion-button color="danger" class="buttons" (click)="cancel()" type="submit">Cancelar\n        </button>\n    </ion-col>\n  </ion-row>\n</ion-content>'/*ion-inline-end:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/login/login.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_backend_service__["a" /* BackendService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_backend_service__["a" /* BackendService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */]) === "function" && _e || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__services_backend_service__["a" /* BackendService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */]])
     ], LoginPage);
     return LoginPage;
-    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=login.js.map
@@ -205,15 +203,15 @@ webpackEmptyAsyncContext.id = 114;
 
 var map = {
 	"../pages/audiencia-bloco/audiencia-bloco.module": [
-		283,
+		284,
 		2
 	],
 	"../pages/config/config.module": [
-		284,
+		285,
 		1
 	],
 	"../pages/login/login.module": [
-		285,
+		286,
 		0
 	]
 };
@@ -279,8 +277,8 @@ var TabsPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_backend_service__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_backend_service__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -298,7 +296,8 @@ var HomePage = /** @class */ (function () {
         var _this = this;
         this.navCtrl = navCtrl;
         this.backend = backend;
-        this.backend.getAudienciasSugeridas().subscribe(function (data) {
+        var user = localStorage.getItem('user');
+        this.backend.getAudienciasSugeridas(user).subscribe(function (data) {
             _this.audiencias = data;
         });
     }
@@ -309,9 +308,10 @@ var HomePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-home',template:/*ion-inline-start:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-searchbar placeholder="Buscar Audiência Pública" [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel"\n    (ionInput)="onInput($event.target.value)" (ionCancel)="onCancel($event)">\n  </ion-searchbar>\n  <div *ngFor="let aud of audiencias">\n    <page-audiencia-bloco [local]="aud.local" [nome]="aud.nome" [data]="aud.data" [pauta]="aud.pauta" [pautaId]="aud.pautaId"></page-audiencia-bloco>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/home/home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_backend_service__["a" /* BackendService */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_backend_service__["a" /* BackendService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_backend_service__["a" /* BackendService */]) === "function" && _b || Object])
     ], HomePage);
     return HomePage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=home.js.map
@@ -324,8 +324,8 @@ var HomePage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AudienciasPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_backend_service__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_backend_service__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -349,7 +349,7 @@ var AudienciasPage = /** @class */ (function () {
     }
     AudienciasPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-audiencias',template:/*ion-inline-start:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/audiencias/audiencias.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Audiências</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-list>\n    <ion-item *ngFor="let aud of audiencias">\n      <h3><ion-icon name="calendar"></ion-icon> {{aud.local}} - {{aud.data}} </h3>\n\n      <p>Pautas:</p>\n      <p *ngFor="let pauta of aud.pauta">{{pauta.nome}}</p>\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/audiencias/audiencias.html"*/
+            selector: 'page-audiencias',template:/*ion-inline-start:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/audiencias/audiencias.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Audiências</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-list>\n    <ion-item *ngFor="let aud of audiencias">\n      <h3>\n        <ion-icon name="calendar"></ion-icon> {{aud.local}} - {{aud.data}}\n      </h3>\n\n      <p>Pautas:</p>\n      <p><span *ngFor="let pauta of aud.pauta; let i = index">{{pauta.nome}}<span *ngIf="i!=aud.pauta.length -1">,\n          </span></span></p>\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/audiencias/audiencias.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_backend_service__["a" /* BackendService */]])
     ], AudienciasPage);
@@ -366,7 +366,8 @@ var AudienciasPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CalendarioPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_calendar__ = __webpack_require__(205);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -378,15 +379,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var CalendarioPage = /** @class */ (function () {
-    function CalendarioPage(navCtrl) {
+    function CalendarioPage(navCtrl, calendar) {
         this.navCtrl = navCtrl;
+        this.calendar = calendar;
+        this.calendar.createCalendar('MyCalendar').then(function (msg) { console.log(msg); }, function (err) { console.log(err); });
     }
     CalendarioPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-calendario',template:/*ion-inline-start:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/calendario/calendario.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title>Calendário</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n\n<ion-content padding>\n    <p>CALENDARIO AQUI</p>\n</ion-content>\n'/*ion-inline-end:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/calendario/calendario.html"*/
+            selector: 'page-calendario',template:/*ion-inline-start:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/calendario/calendario.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title>Calendário</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n\n<ion-content padding>\n</ion-content>\n'/*ion-inline-end:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/calendario/calendario.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_calendar__["a" /* Calendar */]])
     ], CalendarioPage);
     return CalendarioPage;
 }());
@@ -395,14 +399,14 @@ var CalendarioPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 205:
+/***/ 206:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AudienciaBlocoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_backend_service__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_backend_service__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -427,6 +431,7 @@ var AudienciaBlocoPage = /** @class */ (function () {
         this.navParams = navParams;
         this.backend = backend;
         this.toastCtrl = toastCtrl;
+        console.log(this.pauta);
     }
     AudienciaBlocoPage.prototype.ionViewDidLoad = function () {
     };
@@ -468,7 +473,7 @@ var AudienciaBlocoPage = /** @class */ (function () {
     ], AudienciaBlocoPage.prototype, "pautaId", void 0);
     AudienciaBlocoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-audiencia-bloco',template:/*ion-inline-start:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/audiencia-bloco/audiencia-bloco.html"*/'<ion-content class="page">\n\n  <ion-card class="bloco">\n\n    <ion-item>\n\n      <h2>{{nome}}</h2>\n      <div>\n        <p><ion-icon style="margin: 1vh 0 0 0" name="calendar"></ion-icon> {{local}} - {{data}}</p>\n      </div>\n    </ion-item>\n\n\n    <ion-card-content>\n      <p>{{pauta}}</p>\n    </ion-card-content>\n\n    <ion-row>\n      <ion-col>\n        <button (click)="likeAudiencia()" ion-button icon-start clear small>\n          <ion-icon name="thumbs-up"></ion-icon>\n          <div>Like</div>\n        </button>\n      </ion-col>\n    </ion-row>\n\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/audiencia-bloco/audiencia-bloco.html"*/,
+            selector: 'page-audiencia-bloco',template:/*ion-inline-start:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/audiencia-bloco/audiencia-bloco.html"*/'<ion-content class="page">\n\n  <ion-card class="bloco">\n\n    <ion-item>\n\n      <h2>{{nome}}</h2>\n      <div>\n        <p>\n          <ion-icon style="margin: 1vh 0 0 0" name="calendar"></ion-icon> {{local}} - {{data}}\n        </p>\n      </div>\n    </ion-item>\n\n\n    <ion-card-content>\n      <p><span *ngFor="let p of pauta; let i = index">{{p}}<span *ngIf="i!=pauta.length -1">,\n          </span></span></p> \n    </ion-card-content>\n\n    <ion-row>\n      <ion-col>\n        <button (click)="likeAudiencia()" ion-button icon-start clear small>\n          <ion-icon name="thumbs-up"></ion-icon>\n          <div>Like</div>\n        </button>\n      </ion-col>\n    </ion-row>\n\n  </ion-card>\n</ion-content>'/*ion-inline-end:"/Users/matheus.leu@ibm.com/Documents/EACH/rp2/Audisp-front/src/pages/audiencia-bloco/audiencia-bloco.html"*/,
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_backend_service__["a" /* BackendService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_backend_service__["a" /* BackendService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */]) === "function" && _d || Object])
     ], AudienciaBlocoPage);
@@ -480,13 +485,13 @@ var AudienciaBlocoPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 206:
+/***/ 207:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(227);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(228);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -494,7 +499,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 227:
+/***/ 228:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -502,26 +507,28 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(234);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(235);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(276);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_audiencias_audiencias__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_backend_service__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_backend_service__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_calendario_calendario__ = __webpack_require__(204);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_home_home__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_tabs_tabs__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_audiencia_bloco_audiencia_bloco__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_audiencia_bloco_audiencia_bloco__ = __webpack_require__(206);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_config_config__ = __webpack_require__(101);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_login_login__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_status_bar__ = __webpack_require__(197);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_splash_screen__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_local_notifications__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_calendar__ = __webpack_require__(205);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -582,6 +589,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_15__ionic_native_splash_screen__["a" /* SplashScreen */],
                 __WEBPACK_IMPORTED_MODULE_7__services_backend_service__["a" /* BackendService */],
                 __WEBPACK_IMPORTED_MODULE_16__ionic_native_local_notifications__["a" /* LocalNotifications */],
+                __WEBPACK_IMPORTED_MODULE_17__ionic_native_calendar__["a" /* Calendar */],
                 { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["b" /* IonicErrorHandler */] }
             ]
         })
@@ -593,13 +601,13 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 275:
+/***/ 276:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(197);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_local_notifications__ = __webpack_require__(200);
@@ -678,7 +686,7 @@ var MyApp = /** @class */ (function () {
                 title: 'Oi',
                 text: 'Notificacao teste',
                 trigger: { firstAt: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDay(), 12, 0, 0, 0) },
-                every: 'minute'
+                every: 'day'
             });
         }
         else {
@@ -702,7 +710,7 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 41:
+/***/ 33:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -728,8 +736,8 @@ var BackendService = /** @class */ (function () {
     BackendService.prototype.getListaAudiencas = function () {
         return this.http.get(this.url + 'aud/lista', {});
     };
-    BackendService.prototype.getAudienciasSugeridas = function () {
-        return this.http.get(this.url + 'aud/sugeridas', {});
+    BackendService.prototype.getAudienciasSugeridas = function (user) {
+        return this.http.post(this.url + 'aud/sugeridas', { id: user });
     };
     BackendService.prototype.getUserLikes = function (body) {
         return this.http.post(this.url + 'user/likes', body);
@@ -758,5 +766,5 @@ var BackendService = /** @class */ (function () {
 
 /***/ })
 
-},[206]);
+},[207]);
 //# sourceMappingURL=main.js.map
